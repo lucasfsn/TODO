@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Things To Do</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each todos}}
+      <tr>
+        <td>{{this.title}}</td>
+        <td>
+          <form action='/todo/{{this.id}}?_method=DELETE' method='post'>
+            <button type='submit' class='delete__button'>delete</button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<p>
+  <form action='/todo/form/add' method='get' class='add-todo-container'>
+    <button type='submit' class='add-todo-button'>ADD</button>
+  </form>
+</p>
